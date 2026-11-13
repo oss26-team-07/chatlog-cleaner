@@ -1,0 +1,20 @@
+site_name: chatlog_cleaner
+site_url: https://oss26-team-07.github.io/chatlog-cleaner
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Proposal: proposal.md
+  - Team rules: team-rules.md
+  - API: api.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            docstring_options:
+              returns_named_value: false
+              returns_multiple_items: false

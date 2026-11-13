@@ -1,0 +1,705 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oss26-team-07.github.io/chatlog-cleaner/proposal/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../team-rules/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Proposal - chatlog_cleaner</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#project-proposal-multilingual-chat-log-preprocessor" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="chatlog_cleaner" class="md-header__button md-logo" aria-label="chatlog_cleaner" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            chatlog_cleaner
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Proposal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="chatlog_cleaner" class="md-nav__button md-logo" aria-label="chatlog_cleaner" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    chatlog_cleaner
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proposal
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 프로젝트 주제(Project topic)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 프로젝트 주제(Project topic)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want-to-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        만들고 싶은 프로그램(What we want to build)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        사용자 정의 및 해결할 문제(Users and problem)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-planned-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 개발할 기능(Planned features)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 개발할 기능(Planned features)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        입력(Input)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        처리(Processing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        결과(Output)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개발 범위(Scope)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        사용 예시(Usage example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 프로젝트 주제(Project topic)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 프로젝트 주제(Project topic)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want-to-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        만들고 싶은 프로그램(What we want to build)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users-and-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        사용자 정의 및 해결할 문제(Users and problem)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-planned-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 개발할 기능(Planned features)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 개발할 기능(Planned features)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        입력(Input)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        처리(Processing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        결과(Output)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개발 범위(Scope)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        사용 예시(Usage example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="project-proposal-multilingual-chat-log-preprocessor">프로젝트 제안서(Project proposal): "다국어 채팅 기록 전처리기(Multilingual Chat Log Preprocessor)"</h1>
+<h2 id="1-project-topic">1. 프로젝트 주제(Project topic)</h2>
+<h3 id="what-we-want-to-build">만들고 싶은 프로그램(What we want to build)</h3>
+<p>여러 언어가 섞인 채팅 기록을 불러와 정제하고, 전화번호와 이메일 같은 개인정보를 마스킹하는 전처리 Python 패키지를 개발한다.
+(We will build a Python package that loads multilingual chat logs, cleans them, and masks personal information such as phone numbers and email addresses.)</p>
+<h3 id="users-and-problem">사용자 정의 및 해결할 문제(Users and problem)</h3>
+<p>채팅 기록을 분석하거나 데이터셋으로 공유하려는 사용자는 시간 형식이 제각각이고, 시스템 메시지가 섞여 있으며, 전화번호와 이메일이 그대로 노출된 기록을 직접 하나씩 정리하고 가려야 한다. 이 프로그램은 파싱, 시간 형식 통일, 정렬, 시스템 메시지 제거, 개인정보 마스킹을 한 번에 처리해 이 반복 작업을 줄여 준다.
+(Users who want to analyze chat logs or share them as a dataset must manually clean logs with inconsistent time formats and mixed-in system messages, and hide exposed phone numbers and emails one by one. This program parses, normalizes time formats, sorts, removes system messages, and masks personal information in one pass, reducing this repetitive work.)</p>
+<h2 id="2-planned-features">2. 개발할 기능(Planned features)</h2>
+<h3 id="input">입력(Input)</h3>
+<p>사용자가 컴퓨터에 저장한 UTF-8 인코딩의 채팅 기록 파일. 한국어, 영어 등 여러 언어가 섞여 있으며, 각 메시지에는 시간, 발언자, 발언 내용이 포함된다.
+(A UTF-8 encoded chat log file stored on the user's computer. It mixes multiple languages such as Korean and English, and each message contains a time, a speaker, and the message content.)</p>
+<h3 id="processing">처리(Processing)</h3>
+<ol>
+<li>UTF-8 인코딩으로 여러 언어가 섞인 채팅 기록 파일을 불러온다(Load the multilingual chat log file with UTF-8 encoding).</li>
+<li>메시지별로 시간, 발언자, 발언 내용을 파싱한다(Parse the time, speaker, and content of each message).</li>
+<li>시간 형식을 하나로 통일한다(Normalize all times into a single format).</li>
+<li>발언 시간 순서대로 정렬하고, 시간이 같으면 원본 순서를 유지한다(Sort messages by time; messages with the same time keep their original order).</li>
+<li>고정된 패턴의 시스템 메시지를 식별해 제거한다(Identify and remove system messages that follow fixed patterns).</li>
+<li>정규표현식으로 전화번호와 이메일을 찾아 대체 문자열로 마스킹한다(Find phone numbers and email addresses with regular expressions and replace them with mask strings).</li>
+</ol>
+<h3 id="output">결과(Output)</h3>
+<p>정제된 채팅 기록을 입력 파일과 같은 형식의 UTF-8 파일로 새로 저장한다. 각 메시지는 통일된 시간 형식, 발언자, 발언 내용으로 구성되고 시간 순서대로 정렬된다. 시스템 메시지는 제거되며, 발언 내용은 전화번호와 이메일이 마스킹된 부분 외에는 원문과 동일하게 보존한다. 원본 파일은 수정하지 않는다.
+(The program saves the cleaned chat log as a new UTF-8 file in the same format as the input file. Each message consists of a normalized time, the speaker, and the content, sorted by time. System messages are removed, and message content stays identical to the original except for the masked phone numbers and emails. The original file is not modified.)</p>
+<h3 id="scope">개발 범위(Scope)</h3>
+<ul>
+<li>포함할 기능(In scope): UTF-8 다국어 채팅 기록 불러오기, 메시지 파싱, 시간 형식 통일 및 정렬, 고정 패턴 시스템 메시지 제거, 전화번호·이메일 마스킹(Loading UTF-8 multilingual chat logs, parsing messages, normalizing and sorting times, removing fixed-pattern system messages, and masking phone numbers and emails).</li>
+<li>제외할 기능(Out of scope): 이름·주소 등 전화번호와 이메일 외 개인정보 마스킹, 번역, 이미지·파일 첨부 처리(Masking personal information other than phone numbers and emails such as names or addresses, translation, and handling attached images or files).</li>
+<li>한계(Limitation): 정규표현식에 맞지 않는 비표준 형식의 전화번호나 이메일, 정의되지 않은 패턴의 시스템 메시지는 처리되지 않을 수 있으므로 결과를 직접 확인해야 한다(Phone numbers or emails in non-standard formats and system messages with undefined patterns may not be handled, so the output must be checked manually).</li>
+</ul>
+<h3 id="usage-example">사용 예시(Usage example)</h3>
+<p>사용자가 한국어와 영어가 섞인 채팅 기록 <code>chat.txt</code>를 입력한다. 프로그램은 메시지를 파싱해 시간 형식을 통일하고 시간 순서대로 정렬한 뒤, 입장·퇴장 같은 시스템 메시지를 제거하고 전화번호와 이메일을 마스킹해 <code>chat_clean.txt</code>를 새로 저장한다. 사용자는 테스트 샘플의 출력 결과가 기대 결과와 일치하는지, 마스킹된 부분 외의 발언 내용이 원문과 같은지 확인한다.
+(The user provides <code>chat.txt</code>, a chat log mixing Korean and English. The program parses the messages, normalizes time formats, sorts them by time, removes system messages such as join and leave notices, masks phone numbers and emails, and saves a new file, <code>chat_clean.txt</code>. The user checks that the output for the test sample matches the expected result and that message content is identical to the original except for the masked parts.)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,5 +1,13 @@
 """Core functions of chatlog_cleaner."""
 
+import re
+
+_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+_PHONE_RE = re.compile(
+    r"(?<!\d)(?:\+82[-.\s]?0?|0)(?:1[016789]|2|[3-6][1-5]|70)"
+    r"[-.\s]?\d{3,4}[-.\s]?\d{4}(?!\d)"
+)
+
 
 def load_chat(path):
     """Read a UTF-8 chat log file and return its lines.
@@ -109,4 +117,6 @@ def mask_pii(text):
         >>> mask_pii("연락처 010-1234-5678, mail kim@example.com")
         '연락처 [PHONE], mail [EMAIL]'
     """
-    raise NotImplementedError
+    text = _EMAIL_RE.sub("[EMAIL]", text)
+    text = _PHONE_RE.sub("[PHONE]", text)
+    return text

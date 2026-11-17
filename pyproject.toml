@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chatlog-cleaner"
+version = "0.1.0"
+description = "Load multilingual chat logs, clean them, and mask phone numbers and emails"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "oss26-team-07" }]
+dependencies = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/oss26-team-07/chatlog-cleaner"
+Documentation = "https://oss26-team-07.github.io/chatlog-cleaner/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chatlog_cleaner"]

@@ -17,10 +17,12 @@ Processing order:
     6. ``mask_pii``: mask the ``text`` of every message.
 
 Not provided yet:
-    A function that runs steps 1 to 6 and writes the result to a new
-    UTF-8 file in the input format, without changing the original
-    file. When ``normalize_time`` raises ``ValueError`` for one
-    message, that function must skip only that message and show a
+    ``clean_chat(src, dst)``: runs steps 1 to 6 and writes the result
+    to a new UTF-8 file in the input format, without changing the
+    original file. ``normalize_time`` only raises ``ValueError`` and
+    never skips anything itself. Skipping is the job of
+    ``clean_chat``: when ``normalize_time`` raises ``ValueError`` for
+    one message, ``clean_chat`` skips only that message and shows a
     warning, so that one bad line does not stop the whole file.
 
 Out of scope:

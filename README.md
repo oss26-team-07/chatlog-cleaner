@@ -55,7 +55,16 @@ chat_clean.txt
 5. 전화번호와 이메일 마스킹
 6. 정제된 결과를 새 파일로 저장
 
-> 실제 Python 사용 예시는 공개 함수의 입력 및 출력 형식을 확인한 후 추가합니다.
+다음 실제 Python 사용 예시는 전화번호와 이메일이 포함된 문자열에서 개인정보를 마스킹하는 방법입니다.
+from chatlog_cleaner import mask_pii
+
+message = "연락처 010-1234-5678, 이메일 kim@example.com"
+cleaned_message = mask_pii(message)
+
+print(cleaned_message)
+
+실행 결과:
+연락처 [PHONE], 이메일 [EMAIL]
 
 ## 4. Dependencies
 

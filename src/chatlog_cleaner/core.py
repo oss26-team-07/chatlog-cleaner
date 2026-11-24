@@ -181,7 +181,7 @@ def sort_messages(messages):
         >>> [m['text'] for m in sort_messages(msgs)]
         ['a', 'b']
     """
-    raise NotImplementedError
+    return sorted(messages, key=lambda message: message["time"])
 
 
 def remove_system_messages(messages):

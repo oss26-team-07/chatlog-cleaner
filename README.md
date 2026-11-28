@@ -76,7 +76,10 @@ print(cleaned_message)
 
 ## 5. Tests
 
-TODO: 테스트 샘플 및 테스트 실행 방법을 추가합니다.
+```bash
+pip install -e . pytest
+pytest
+```
 
 ## 6. Documentation
 
